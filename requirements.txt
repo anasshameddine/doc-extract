@@ -1,0 +1,12 @@
+# Etape 0 - donnees
+datasets>=3.0
+pillow>=10.0
+pandas>=2.0
+pyarrow>=15.0
+tqdm>=4.66
+# Etape 1 - schema et validation
+pydantic>=2.6
+# Etape 2 - OCR (Tesseract : programme a installer a part, voir README)
+pytesseract>=0.3.10
+# Tests
+pytest>=8.0

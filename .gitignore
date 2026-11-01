@@ -1,0 +1,27 @@
+# environnement et caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# données, sorties et modèles : trop lourds, et les jeux de données ne m'appartiennent pas
+data/
+outputs/
+*.zip
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+
+# fichiers locaux
+.env
+*.log
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+desktop.ini

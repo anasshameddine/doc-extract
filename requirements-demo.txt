@@ -1,0 +1,2 @@
+# Etape 7 - demo (en plus de requirements.txt ; Donut / RapidOCR / Ollama restent optionnels selon l'approche)
+streamlit>=1.40

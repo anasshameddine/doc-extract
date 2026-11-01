@@ -1,0 +1,4 @@
+# Approche 3 (Donut) en local. torch AVEC GPU (RTX 2050) :
+#   pip install torch --index-url https://download.pytorch.org/whl/cu126
+transformers==4.46.3
+sentencepiece

@@ -1,0 +1,5 @@
+# Etape 6 - API (en plus de requirements.txt ; Donut/RapidOCR/Ollama restent optionnels selon l'approche)
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+httpx>=0.27        # client de test

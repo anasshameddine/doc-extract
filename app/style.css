@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Courier+Prime:wght@400;700&display=swap');
+
+:root {
+  --desk: #DCE1E3;
+  --ink: #1D2A33;
+  --paper: #FBFBF7;
+  --faded: #5B6770;
+  --marker: #F6E94B;
+  --stamp: #A8362E;
+  --ui: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --print: 'Courier Prime', 'Courier New', monospace;
+}
+
+.stApp { background: var(--desk); }
+.stApp { font-family: var(--ui); }
+.stApp p, .stApp label, .stApp li, .stApp h1, .stApp h2, .stApp h3 { font-family: var(--ui); color: var(--ink); }
+#MainMenu, footer { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }
+[data-testid="stToolbar"] { display: none; }
+.block-container { max-width: 1120px; padding-top: 2.4rem; padding-bottom: 4rem; }
+
+/* titre */
+.stApp h1 { font-weight: 800; font-size: 3.1rem; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 .5rem; padding: 0; }
+.lede { font-size: 1.12rem; line-height: 1.5; max-width: 34rem; margin: 0 0 1.8rem; }
+
+/* onglets */
+.stTabs [data-baseweb="tab-list"] { gap: 1.6rem; border-bottom: 1px solid #b9c2c6; }
+.stTabs [data-baseweb="tab"] { padding: .5rem 0; background: transparent; font-weight: 500; }
+.stTabs [aria-selected="true"] { font-weight: 700; }
+.stTabs [data-baseweb="tab-highlight"] { background: var(--ink); height: 3px; }
+
+/* depot de fichier */
+[data-testid="stFileUploader"] section { background: rgba(251,251,247,.55); border: 2px dashed #8d9aa1; border-radius: 4px; }
+[data-testid="stFileUploader"] section:hover { border-color: var(--ink); }
+[data-testid="stFileUploader"] button { border-radius: 3px; }
+
+/* choix */
+.stRadio [role="radiogroup"] { gap: .35rem 1.2rem; }
+.stRadio label p { font-size: .98rem; }
+
+/* bouton : encre, angles vifs */
+.stButton > button { background: var(--ink); color: var(--paper); border: 0; border-radius: 3px; padding: .7rem 1.6rem;
+  font-weight: 700; font-size: 1.02rem; letter-spacing: .01em; }
+.stButton > button p { color: var(--paper); font-weight: 700; }
+.stButton > button:disabled { background: #aab5bb; color: #eef1f2; opacity: 1; cursor: not-allowed; }
+.stButton > button:disabled p { color: #eef1f2; }
+.stButton > button:hover { background: #2c4352; color: var(--paper); }
+.stButton > button:focus-visible, [data-testid="stFileUploader"] button:focus-visible { outline: 3px solid var(--marker); outline-offset: 2px; }
+
+/* la photo, posee sur le bureau */
+.photo { display: inline-block; background: #fff; padding: 10px 10px 14px; transform: rotate(-1.6deg);
+  box-shadow: 0 1px 1px rgba(29,42,51,.25), 0 14px 22px -10px rgba(29,42,51,.45); margin: 1rem 0 .5rem .4rem; }
+.photo img { display: block; max-width: 100%; max-height: 430px; }
+
+/* le ticket */
+.tickets { display: flex; flex-wrap: wrap; gap: 2.2rem 1.6rem; align-items: flex-start; margin: 1.2rem 0 2.6rem; }
+.ticket { flex: 1 1 250px; max-width: 330px; filter: drop-shadow(0 10px 12px rgba(29,42,51,.28)); }
+.t-paper { background: var(--paper); padding: 1.3rem 1.2rem 1.5rem; font-family: var(--print); color: var(--ink); position: relative; margin-bottom: 7px; }
+.t-paper::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 7px;
+  background: linear-gradient(135deg, var(--paper) 25%, transparent 25%) -4px 0, linear-gradient(225deg, var(--paper) 25%, transparent 25%) -4px 0;
+  background-size: 8px 8px; }
+.t-paper hr { border: 0; border-top: 1.5px dashed #9aa5ab; margin: .8rem 0; }
+.t-title { font-family: var(--ui); font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; }
+.t-sub { color: var(--faded); font-size: .8rem; margin-top: .15rem; line-height: 1.3; }
+.t-row { display: flex; justify-content: space-between; gap: .8rem; align-items: baseline; padding: .28rem 0; font-size: .92rem; }
+.t-row > span { color: var(--faded); flex: none; }
+.t-row b, .t-row i { text-align: right; overflow-wrap: anywhere; }
+.stApp .t-row b .hit { color: inherit; font-weight: 700; background: linear-gradient(transparent 12%, var(--marker) 12%, var(--marker) 90%, transparent 90%) !important;
+  padding: 0 .25em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.t-row i.none { color: #98a2a8; font-style: normal; }
+.t-down { font-weight: 700; margin-top: .3rem; }
+.t-why { color: var(--faded); font-size: .8rem; margin-top: .4rem; line-height: 1.35; overflow-wrap: anywhere; }
+.t-foot { color: var(--faded); font-size: .8rem; text-align: center; min-height: 1.7rem; }
+.stamp { display: inline-block; color: var(--stamp); border: 2px solid var(--stamp); padding: .1rem .55rem; font-family: var(--ui);
+  font-weight: 800; font-size: .95rem; transform: rotate(-5deg); opacity: .85; }
+
+/* l'unique animation : les tickets s'impriment, une fois, a l'arrivee des resultats */
+@keyframes print { from { clip-path: inset(0 -10px 100% -10px); } to { clip-path: inset(-10px -10px -30px -10px); } }
+.ticket.fresh { animation: print .9s cubic-bezier(.3,.6,.3,1) both; }
+.ticket.fresh:nth-child(2) { animation-delay: .35s; }
+.ticket.fresh:nth-child(3) { animation-delay: .7s; }
+@media (prefers-reduced-motion: reduce) { .ticket.fresh { animation: none; } }
+
+.hint { color: var(--faded); margin-top: 1.4rem; }
+
+/* tableau du benchmark */
+.stMarkdown table { border-collapse: collapse; width: 100%; background: var(--paper); font-size: .93rem; }
+.stMarkdown th { text-align: left; border-bottom: 2px solid var(--ink); padding: .5rem .7rem; font-weight: 700; }
+.stMarkdown td { padding: .4rem .7rem; border-bottom: 1px solid #dfe3e5; }
+.stMarkdown tr:last-child td { border-bottom: 0; }
+.stMarkdown h2 { font-weight: 800; letter-spacing: -.02em; margin-top: 2rem; }
+
+@media (max-width: 640px) { .stApp h1 { font-size: 2.3rem; } .ticket { max-width: none; } }
